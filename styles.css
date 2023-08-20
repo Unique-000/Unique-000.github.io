@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&family=Montserrat&family=Roboto&display=swap');
+*{
+    text-align: center;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: fixed;
+    background-color: rgb(0, 0, 0);
+    background-image: url(NightSky.jpeg);
+}
+
+.MenuIcon{
+    width: 35px;
+}
+
+header{
+    margin-top: 10px;
+    width: 200px;
+    height: 45px;
+    display: flex;
+    justify-content: center ;
+    align-items: center;  
+    column-gap: 20px;
+    background-color: #0088ff4e;
+    box-shadow: 0 0 100px #0088ff6d;
+    border-radius: 10px; 
+    backdrop-filter: blur(3px);
+    position: -webkit-sticky; /* Safari */
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    transition: box-shadow 0.5s, background-color 0.3s;
+}
+
+header:hover{
+    background-color: rgb(0, 187, 255);
+    box-shadow: 0 0 100px #0088ff;
+    transition: box-shadow 0.5s, background-color 0.3s;
+}
+
+h1{
+    font-family: Anton;
+    font-size: 300px;
+    color: #ffffff;
+    background-image: -webkit-linear-gradient(0deg, #0611bd 22%, #9c27b0 63%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+    0 0 151px rgba(123, 0, 255, 0.473); 
+}
+
+h3{
+    font-family: Roboto;
+    font-size: 50px;
+    color: #ffffff;
+    background-image: -webkit-linear-gradient(0deg, #0611bd 22%, #9c27b0 63%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+    0 0 151px rgba(123, 0, 255, 0.473); 
+}
+
+h4{
+    font-family: Roboto;
+    font-size: 35px;
+    color: #ffffff;
+    background-image: -webkit-linear-gradient(0deg, #0611bd 22%, #9c27b0 63%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+    0 0 151px rgba(123, 0, 255, 0.473); 
+}
+
+h5{
+    font-family: Roboto;
+    font-size: 25px;
+    color: #ffffff;
+
+}
+
+p{
+    font-family: Roboto;
+    font-size: 20px;
+    color: #ffffff;
+    text-shadow:
+    0 0 151px rgba(123, 0, 255, 0.473); 
+}
+
+hr{
+    width: 60%;
+    border-color:#9c27b0;
+}
+
+.ScrollableDiv{
+    display: flex;
+    background-color: transparent;
+    column-gap: 20px;
+}
+
+.Project{
+    width: 500px;
+    height: 300px;
+    backdrop-filter: blur(5px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.134);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    display: flex;
+    justify-content: center ;
+    align-items: center;  
+    column-gap: 20px;
+    transition: width 0.5s;
+    position: relative;
+}
+
+.ProjectImgs{
+    width: 200px;
+    height: 200px;
+    border-radius: 30px;
+}
+
+.ProjectParagraphHolder{
+    width: 200px;
+    height: 240px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.HiddenButton{
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+    border: none;
+    border-radius: 30px;
+    background-color: #5e00b6;
+    box-shadow: 0 0 100px #9500ff;
+    font-family: Roboto;
+    font-size: 0px;
+    color: transparent;
+    transition: width 0.3s, height 0.3s, visibility 0.5s, color 0.8s;
+}
+
+.Project:hover  .HiddenButton {
+    visibility: visible;
+    width: 130px;
+    height: 130px;
+    font-size: 35px;
+    color: #ffffff;
+    transition: width 0.3s, height 0.3s, visibility 0.5s, color 1s;
+    cursor: pointer;
+}
+
+.Project:hover{
+    width: 700px;
+    transition: width 0.5s;
+}
+
+.Projects-Div{
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+}
+
+.Container{
+    background-color: transparent;
+    width: 100%;
+}
+
+
+.FooterHr{
+    width: 96%;
+}
+
+.ContactImgs{
+    width: 50px;
+}
+
+a{
+    font-family: Montserrat;
+    font-size: 25px;
+    color: #ffffff;
+}
+
+a:hover{
+    background-color: #0088ff40;
+    box-shadow: 0 0 150px #0088ff;
+    border-radius: 30px;
+    transition: box-shadow;
+}
+
+.ContactDiv{
+    display: flex;
+    column-gap: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.ContactLinks{
+    font-family: Montserrat;
+    font-size: 25px;
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 767px) { /*phones*/
+    h1{
+        font-size: 90px;
+    }
+
+    header{
+        background-color: #0088ff9f;
+    }
+
+    .ContactLinks{
+        font-size: 0px;
+        visibility: hidden;
+    }
+
+    .ContactDiv{
+        column-gap: 15px;
+    }
+
+    .Project{
+        width: 380px;
+        height: 240px;
+    }
+
+    .ProjectImgs{
+        width: 130px;
+        height: 130px;
+    }
+
+    .HiddenButton{
+        visibility: visible;
+        width: 90px;
+        height: 90px;
+        font-size: 25px;
+        color: #ffffff;
+    }
+
+    p{
+        font-size: 15px;
+    }
+
+    .ProjectParagraphHolder{
+        width: 120px;
+        height: 130;
+        overflow-wrap: break-word;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) { /*tablets*/
+    h1{
+        font-size: 220px;
+    }
+
+    header{
+        background-color: #0088ff9f;
+    }
+ }

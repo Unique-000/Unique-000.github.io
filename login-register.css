@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Oswald&display=swap');
+body{
+    background-color: #4CC9F0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    height: 100vh;
+    background-color: #252627;
+    width: 30%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+    box-shadow: 
+      -0.5rem 0 0.8rem #02a9ea,
+      0.5rem 0 0.8rem #02a9ea; 
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+}
+.form{
+    margin-left: 15%;
+    
+    width: 70%;
+    text-align: center;
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    margin-bottom: 100px;
+    font-family: 'Oswald';
+    font-size:x-large;
+    color: #ffffff;
+}
+.input{
+    margin-bottom: 10px;
+    width: 100%;
+    height: 40px;
+    border: 0px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #4361EE;
+    color: #ffffff;
+    font-family: 'Montserrat';
+    
+}
+
+::placeholder {  
+    font-family: 'Montserrat'; 
+    color: #ffffff;
+ }
+
+ .submitButton{
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    border-style: none;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #7209B7;
+    color: #ffffff;
+    font-family: 'Montserrat';
+    transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+    /* darken the background color by 10% */
+    background-color: #63078c;
+}
+
+@media only screen and (max-width: 767px) { /*phones*/
+    body{
+        background-color: #252627;
+    }
+    .container{
+        width: 100%;
+        border-radius: 0rem;
+        box-shadow: none;
+    }
+
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) { /*tablets*/
+    .container{
+        width: 450px;
+    }
+ }

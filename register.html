@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login-register.css">
+    <title>OhSochat</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <h1>Before you chat...</h1>
+                <input type="text" placeholder="Code" class="input" id="registerUsername">
+                <input type="password" placeholder="Password (3 digits)" class="input" id="registerPassword1" maxlength="3" required>
+                <input type="password" placeholder="Password (again)" class="input" id="registerPassword" maxlength="3" required>
+                <button id="registerButton" class="submitButton" type="submit">Register</button>
+            <p>Already have an account? <a href="index.html">Login</a></p>
+        </div>
+    </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
+        import {getDatabase, set, get, update, remove, ref, child, increment} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+        
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyC3nlEoBcAcL7ua47DVrzJgo5MYNlLBels",
+          authDomain: "ohsochat.firebaseapp.com",
+          databaseURL: "https://ohsochat-default-rtdb.europe-west1.firebasedatabase.app",
+          projectId: "ohsochat",
+          storageBucket: "ohsochat.appspot.com",
+          messagingSenderId: "592376625096",
+          appId: "1:592376625096:web:e8d3aa4ed5f5a05ae7f2fd",
+          measurementId: "G-QPGMWMGG4V"
+        };
+        
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getDatabase();
+        
+        var registerBtn = document.getElementById('registerButton')
+        
+        function insertData(){
+            const dbref = ref(db)
+            if(document.getElementById('registerPassword1').value == document.getElementById('registerPassword').value){
+                get(child(dbref,"users/" + document.getElementById('registerUsername').value)).then((snapshot)=>{
+                    if(snapshot.exists()){
+                        alert("This username already exists")
+                    }
+                    else{
+                        set(ref(db, "users/" + document.getElementById('registerUsername').value),{
+                            password: document.getElementById('registerPassword').value
+                        })
+                        .then(() =>{
+                            alert('User created')
+                            window.location.replace('index.html')
+                        })
+                        .catch(()=>{
+                            alert('Error')
+                        })
+                    }
+                })
+                .catch((error)=>{
+                    alert('Unsuccesful, error'+ error)
+                })
+                
+            }
+            else{
+                alert("Passwords don't match!")
+            }
+        }
+        
+        registerBtn.addEventListener('click', insertData)
+      </script>
+</body>
+</html>

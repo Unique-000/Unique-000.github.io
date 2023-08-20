@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="OhSoChatStyles.css">
+    <title>OhSoChat</title>
+</head>
+<body>
+    <div class="container">
+        <div class="headline">
+            <h1>Contacts</h1>
+        </div>
+        <div class="row">
+        </div>
+    </div>
+    <script type="module" src="contacts.js"></script>
+    <script>
+        // Get the dictionary of names
+        const names = {"Alice": "alice@example.com", "Bob": "bob@example.com", "Charlie": "charlie@example.com"};
+        
+        // Get the row element
+        const row = document.querySelector(".row");
+        
+        // Iterate over each name in the dictionary
+        for (const name in names) {
+          // Create a new button element
+          const button = document.createElement("button");
+          
+          // Add the "contacts" class to the button
+          button.classList.add("contacts");
+          
+          // Set the button text to the name
+          button.textContent = name;
+          
+          // Add an event listener to the button that updates the location to "chat.html" when clicked
+          button.addEventListener("click", function() {
+            window.location.href = "chat.html";
+          });
+          
+          // Add the button to the row
+          row.appendChild(button);
+        }
+    </script>
+</body>
+</html>
