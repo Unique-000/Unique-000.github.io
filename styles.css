@@ -131,8 +131,7 @@ hr{
 .ProjectParagraphHolder{
     width: 200px;
     height: 240px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-wrap: break-word;
     display: flex;
     align-items: center;
 }
